@@ -1,0 +1,47 @@
+body{
+    background-color: #adadad;
+    overflow: hidden;
+}
+.container{
+    margin: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 95vw;
+    height: 95vh;
+}
+.inputSection{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+input[type='text'],
+button[type='button']{
+    width: 93vw;
+    height: 30px;
+    font: 16px;
+    border-radius: 5px;
+    background-color: #686868;
+    transition: .3s;
+}
+button[type='button']{
+    height: 30vh;
+    background-color: green;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+input[type='text']::placeholder{
+    color: black
+}
+input[type='text']:hover{
+    background-color: #ffffff;
+    border-color: #686868;
+}
+button[type='button']:hover{
+    background-color: #034403;
+}

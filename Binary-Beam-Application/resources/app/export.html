@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>BinaryBeam - Import</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inputSection">
+            <input type="text" id="importFile" placeholder="Input Filepath(.txt that was converted)..">
+            <input type="text" id="exportFile" placeholder="Export File Name with extention (must be the same file extension as origin)..">
+        </div>
+        <div class="buttonContainer">
+            <button type="button" id="goButton">Export</button>
+        </div>
+    </div>
+
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io("http://localhost:3000");
+    </script>
+    <script>
+        function sendFunction() {
+            var toRead = document.getElementById('importFile').value.replace(/\\/g, '\\\\');
+            var toWrite = document.getElementById('exportFile').value.replace(/\\/g, '\\\\');
+            socket.emit('createFile', toRead, toWrite);
+            socket.on('callbackFromJSExport', (err) => {
+                if (err) {
+                    console.log(err);
+                }
+                alert('Job\'\s done! Please view the "Exported Folder"');
+            })
+        }
+    </script>
+    <script>
+        document.getElementById('goButton').addEventListener('click', sendFunction);
+    </script>
+</body>
+
+</html>

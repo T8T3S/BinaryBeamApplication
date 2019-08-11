@@ -1,0 +1,17 @@
+{
+  "name": "binarybeam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"electron ."
+  },
+  "author": "T8T3S",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^6.0.1",
+    "fs": "0.0.1-security",
+    "fs-write-data": "^1.0.5",
+    "socketio": "^1.0.0"
+  }
+}
